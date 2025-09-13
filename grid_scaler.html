@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Grid Scaler</title>
+  <link rel="stylesheet" href="/grid_scaler.css">
+</head>
+
+<body>
+
+  <nav>
+    GridScaler
+  </nav>
+
+  <div class="top-container">
+    <label>Larghezza (quadrettini):
+      <input type="number" id="cols" value="70">
+    </label>
+    <label>Altezza (quadrettini):
+      <input type="number" id="rows" value="30">
+    </label>
+  </div>
+
+  <div class="top-container">
+    <label>Sotto-aree in larghezza:
+      <input type="number" id="subCols" value="7">
+    </label>
+    <label>Sotto-aree in altezza:
+      <input type="number" id="subRows" value="3">
+    </label>
+  </div>
+
+  <div class="button-container">
+    <button onclick="createGrid()">Crea griglia</button>
+    <button onclick="downloadJSON()">Salva disegno</button>
+    <input type="file" id="fileInput" accept="application/json" style="display:none" onchange="uploadJSON(event)">
+    <button onclick="document.getElementById('fileInput').click()">Carica disegno</button>
+  </div>
+
+  <div class="top-container">
+    <label>Nuova larghezza (quadrettini):
+      <input type="number" id="newCols" value="35">
+    </label>
+    <label>Nuova altezza (quadrettini):
+      <input type="number" id="newRows" value="15">
+    </label>
+  </div>
+  
+  <div class="button-container">
+    <button id="resizeButton" onclick="resizeGrid()">Ridimensiona</button>
+  </div>
+
+  <div id="gridContainer">
+    <table id="grid"></table>
+  </div>
+
+
+
+  <script src="/grid_scaler.js"></script>
+</body>
+
+</html>
