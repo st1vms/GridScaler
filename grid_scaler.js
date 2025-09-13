@@ -61,6 +61,9 @@ function resizeGrid() {
   rows = newRows;
   cols = newCols;
 
+  document.getElementById("rows").value = rows;
+  document.getElementById("cols").value = cols;
+
   renderGrid(rows, cols, gridData);
 }
 
