@@ -117,4 +117,10 @@ function uploadJSON(event) {
   reader.readAsText(file);
 }
 
+function OnUploadButtonClick(event) {
+  const input = document.getElementById('fileInput');
+  input.value = null; // reset to allow same file selection
+  input.click();
+}
+
 window.onload = createGrid;
